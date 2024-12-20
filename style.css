@@ -1,0 +1,189 @@
+*{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.signup-background {
+    background: url("pic.jpg") center top;
+    background-size: cover;
+    margin: 0;
+}
+
+body.login-background {
+    background: url("cc.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 100vh;
+    margin: 0;
+}
+div.main{
+    width: 400px;
+    margin: 100px auto 0px auto;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+}
+div.register{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    
+}
+div.register:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+}
+form #register{
+    margin: 40px;
+}
+label {
+    font-family: sans-serif;
+    font-size: 18px;
+    
+    display: block;
+    margin-bottom: 10px; /* Add margin to separate labels */
+    text-align: center; /* Center align labels */
+}
+input#name {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+input#name:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #ff4500;
+    color: #ff4500;
+}
+input#password {
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+}
+input#password:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #ff4500;
+    color: #ff4500;
+}
+input#submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4500;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+input#submit:hover {
+    background-color: #ff5722;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+label,h2{
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    transition: text-shadow 0.3s;
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+}
+label {
+    font-family: 'Playfair Display', serif;
+}
+h2:hover, label:hover {
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+a.signup-link {
+    color: #ff4500;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+
+a.signup-link:hover {
+    text-decoration: none; /* Underline on hover */
+    color: #ff5722;
+}
+a.login-link {
+    color: hsl(337, 100%, 50%); /* Change the color to your preferred color */
+    text-decoration: underline; /* Remove underline */
+    font-weight: bold; /* Make it bold */
+    transition: color 0.3s;
+
+}
+
+a.login-link:hover {
+    text-decoration: none; /* Underline on hover */
+    color: #ff5722;
+}
+body:before {
+    content: '';
+    position: fixed;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right, #ff4500, #ff5722);
+    border-image-slice: 1;
+    pointer-events: none;
+    animation: borderAnimation 5s infinite linear;
+}
+@keyframes borderAnimation {
+    0% { border-image-source: linear-gradient(to right, #ff4500, #ff5722); }
+    25% { border-image-source: linear-gradient(to bottom, #ff4500, #ff5722); }
+    50% { border-image-source: linear-gradient(to left, #ff4500, #ff5722); }
+    75% { border-image-source: linear-gradient(to top, #ff4500, #ff5722); }
+    100% { border-image-source: linear-gradient(to right, #ff4500, #ff5722); }
+}
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.navbar a{
+    display: inline-block;
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: .3s;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.navbar a:hover,
+.navbar a.active {
+    color: rgb(146, 25, 251);
+}

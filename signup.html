@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up </title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body class="signup-background">
+        <nav class="navbar">
+            <a href="newfront.html" style = "--i:1;" >HOME</a>
+            <a href="login.html" style = "--i:2;" >LOGIN</a>
+            <a href="signup.html" style = "--i:3;"class="active" >SIGNUP</a>
+            <a href="shopp.html" style = "--i:4;" >ADOPT</a>
+            <a href="newfront.html#blogReviews" style = "--i:5;" >REVIEWS</a>
+        </nav>
+        <div class="main">
+            <div class="register">
+                <h2>Sign Up</h2>
+                <form action="c2.php" id="register" method="post">
+                    <label>Already a member? <a href="login.html" class="login-link">LOGIN HERE</a></label>
+                    <br>
+                    <input type="text" name="UserName" id="name" placeholder="UserName" required>
+                    <br><br>
+                    <br>
+                    <input type="text" name="FullName" id="name" placeholder="FullName" required>
+                    <br><br>
+                    <br>
+                    <input type="password" name="Password" id="name" placeholder="Password" required>
+                    <br><br>
+                    <br>
+                    <input type="text" name="PhoneNumber" id="name" placeholder="PhoneNumber" required>
+                    <br><br>
+                   <br>
+                    <input type="email" name="Email" id="name" placeholder="Email" required>
+                    <br><br>
+                    <br>
+                    <input type="text" name="Address" id="name" placeholder="Address" required>
+                    <br><br>
+                    <input type="submit" value="SUBMIT" name="submit" id="submit">
+                    </form>
+                </div>
+            </div>
+    </body>
+</html>

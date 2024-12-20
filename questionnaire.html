@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eligibility Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body style="background: linear-gradient(to right, #beb9ed, #e13163); height: 100vh;">
+
+    <div class="container" style="height: ; overflow-y: auto; display: flex; justify-content: center; align-items: center;">
+    <div class="card" style="width: 400px; background-color: rgba(255, 255, 255, 0.9);">
+        <div class="card-body">
+            <h2 class="card-title text-center mb-4">Eligibility Checker</h2>
+            
+            <form id="eligibilityForm"  method="post" action="questConnect.php">
+                <div class="form-group">
+                    <label for="question1">1. Are you over 18 years old?</label>
+                    <select class="form-control" id="question1" name="question1">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="question2">2. Do you have a valid ADHAR and PAN id?</label>
+                    <select class="form-control" id="question2" name="question2">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="question3">3. Are you employed?</label>
+                    <select class="form-control" id="question3" name="question3">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question4">4. Pet allergies in the family?</label>
+                    <select class="form-control" id="question4" name="question4">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question5">5. How much time are you willing to dedicate to exercising and training your pet each day?</label>
+                    <select class="form-control" id="question5" name="question5">
+                        <option value="">Select</option>
+                        <option value="0">Less than 15 minutes</option>
+                        <option value="1">More or equal to 30 minutes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question6">6. Do you have any other pets at home?</label>
+                    <select class="form-control" id="question6" name="question6">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question7">7. Are there children in your household?</label>
+                    <select class="form-control" id="question7" name="question7">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="question8">8. Are you willing to invest in regular veterinary care and pet supplies for your new pet?</label>
+                    <select class="form-control" id="question8" name="question8">
+                        <option value="">Select</option>
+                        <option value="0">No, I am looking for a low-maintenance pet</option>
+                        <option value="1">Yes, I am willing to spend but within reasons.</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question9">9. How would you describe your home environment?</label>
+                    <select class="form-control" id="question9" name="question9">
+                        <option value="">Select</option>
+                        <option value="0">Very active and busy</option>
+                        <option value="1">Quiet, calm and moderately active</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question10">10. How would you describe your level of patience?</label>
+                    <select class="form-control" id="question10" name="question10">
+                        <option value="">Select</option>
+                        <option value="0">Not patient at all</option>
+                        <option value="1">Yes patient but with limits</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question11">11. Will your pet have designated sleeping areas?</label>
+                    <select class="form-control" id="question11" name="question11">
+                        <option value="">Select</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="question12">12. How important is compatibility with other pets or animals in your household?</label>
+                    <select class="form-control" id="question12" name="question12">
+                        <option value="">Select</option>
+                        <option value="0">Not important, I don't have other pets or animals at home</option>
+                        <option value="1">Yes very important, I want my pets to get along well</option>
+                    </select>
+                    <div class="form-group">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                </div>
+                <input type="hidden" id="QuestionnaireAnswers" name="QuestionnaireAnswers">
+                <input type="hidden" id="QuestionnaireEligibilty" name="QuestionnaireEligibilty">
+                <input type="hidden" id="RequestId" name="RequestId">
+
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" onclick="checkEligibility()">Check Eligibility</button>
+
+                </div>
+            </form>
+
+            <div id="result" class="mt-4"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+    function checkEligibility() {
+        var score = 0;
+        var answers=[];
+
+        // Calculate the score based on user's answers
+        score += parseInt(document.getElementById("question1").value);
+        answers.push(document.getElementById("question1").value);
+        score += parseInt(document.getElementById("question2").value);
+        answers.push(document.getElementById("question2").value);
+        score += parseInt(document.getElementById("question3").value);
+        answers.push(document.getElementById("question3").value);
+        score += parseInt(document.getElementById("question4").value);
+        answers.push(document.getElementById("question4").value);
+        score += parseInt(document.getElementById("question5").value);
+        answers.push(document.getElementById("question5").value);
+        score += parseInt(document.getElementById("question6").value);
+        answers.push(document.getElementById("question6").value);
+        score += parseInt(document.getElementById("question7").value);
+        answers.push(document.getElementById("question7").value);
+        score += parseInt(document.getElementById("question8").value);
+        answers.push(document.getElementById("question8").value);
+        score += parseInt(document.getElementById("question9").value);
+        answers.push(document.getElementById("question9").value);
+        score += parseInt(document.getElementById("question10").value);
+        answers.push(document.getElementById("question10").value);
+        score += parseInt(document.getElementById("question11").value);
+        answers.push(document.getElementById("question11").value);
+        score+= parseInt(document.getElementById("question12").value);
+        answers.push(document.getElementById("question12").value);
+
+        document.getElementById("QuestionnaireAnswers").value = answers.join(',');
+    
+        // Display the result
+    var resultDiv = document.getElementById("result");
+        if (score > 9) {
+            resultDiv.innerHTML = '<div class="alert alert-success" role="alert">You are eligible!</div>';
+        } else {
+            resultDiv.innerHTML = '<div class="alert alert-danger" role="alert">You are not eligible.</div>';
+        }
+    }
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Jost', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #2549d8; /* Light gray background color */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    margin: 0;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #eaabab; /* White container background color */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slight container shadow */
+    margin-top: 20px;
+}
+
+.trending-product {
+    text-align: center;
+    padding: 50px 0;
+    
+    
+    
+}
+
+h2 {
+    color: #333; /* Dark text color */
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    gap: 2rem;
+}
+
+.row {
+    position: relative;
+    transition: all 0.4s;
+    border: 1px solid #de83a0; /* Light border around each product */
+    border-radius: 10px; /* Rounded corners for each product */
+    overflow: hidden; /* Hide overflowing content within the rounded corners */
+}
+
+.row img {
+    width: 100%;
+    height: auto;
+    transition: all 0.4s;
+}
+
+
+
+.row img:hover {
+    transform: scale(1.1); /* Slightly larger image on hover */
+}
+
+.heart-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: #EE1C47;
+}
+
+.price h4 {
+    color: #333;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.price p {
+    color: #555;
+    font-size: 16px;
+    font-weight: 400;
+}
+/* ... Your existing styles ... */
+
+.price button.btn-adopt {
+    background-color: #4CAF50; /* Green button color */
+    color: #fff; /* White text color */
+    padding: 8px 16px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.price button.btn-adopt:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -28px;
+    left: 480px;
+}
+.navbar a{
+    margin-left: 22px;
+    font-size: 18px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    
+}
+.navbar a:hover,
+.navbar a.active {
+    color: rgb(146, 25, 251);
+}
